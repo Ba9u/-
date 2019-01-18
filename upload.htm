@@ -1,0 +1,29 @@
+<form method="post" enctype="multipart/form-data">
+画像ファイル<input type="file" name="pic">
+<br>
+<input type="submit" name="botan" value="send">
+</form>
+<form action="test11_2.php" method="post" enctype="multipart/form-data">
+画像ファイル<br>
+<input type="file" name="pic">
+<br>
+<input type="submit" name="botan" value="send">
+</form>
+<?php
+if(strlen($_FILES["pic"]["name"])>0)
+{
+   print "name=";
+   print $_FILES["pic"]["name"];
+   print "<BR>";
+   print "size=";
+   print $_FILES["pic"]["size"];
+   print "<BR>";
+   print "tmp_=";
+   print $_FILES["pic"]["tmp_name"];
+   print "<BR>";
+}
+else
+{
+   print "ファイルをアプロードしてください";
+}
+?>
